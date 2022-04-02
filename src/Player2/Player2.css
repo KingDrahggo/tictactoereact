@@ -1,0 +1,66 @@
+.player2{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    left: 70%;
+    bottom: 550px;
+    background-color:bisque;
+    border-radius: 10px;
+    width: 20%;
+    height: 500px;
+}
+.player2Name{
+    display: flex;
+    position: relative;
+    width: 180px;
+    height: 50px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    font-weight: 700;
+    font-size: 30px;
+    box-shadow: rgb(49, 49, 49) 0px 4px 4px 0px;
+    max-width: fit-content;
+    overflow: hidden;
+}
+.player2-image{
+    display: flex;
+    position: relative;
+    width: 200px;
+    border-radius: 15px;
+    box-shadow: rgb(68, 68, 68) 0px 4px 4px 4px;
+    margin: 10px;
+}
+.player2Input{
+    display: flex;
+    position: relative;
+    top: 10px;
+    margin: 5px;
+    text-align: center;
+    border-radius: 15px;
+    font-weight: 600;
+}
+.player2Submit{
+    display:flex;
+    position: relative;
+    top: 10px;
+    margin: 2px 0 10px 0;
+    font-weight: 800;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+}
+.player2Submit:hover{
+    background-color: crimson;
+    color: white;
+    width: 100px;
+    height: 30px;
+    align-items: center;
+    text-indent: 5px;
+    transition: all ease-in-out 0.3s;
+}

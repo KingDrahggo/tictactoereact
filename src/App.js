@@ -1,6 +1,7 @@
 import Header from './Header/Header';
 import Player1 from './Player1/Player1';
 import Player2 from './Player2/Player2';
+import GameBoard from './GameBoard/GameBoard';
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     <Header />
     <Player1 />
     <Player2 />
+    <GameBoard />
     </div>
   );
 }

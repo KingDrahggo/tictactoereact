@@ -1,0 +1,151 @@
+*,*::after, *::before{
+    box-sizing: border-box;
+}
+.gameBoard{
+    display: grid;
+    position: relative;
+    background-color: bisque;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(3,1fr);
+    width: 30rem;
+    height: 30rem;
+    bottom: 65rem;
+    left: 32.5rem;
+}
+.gameCell{
+    display: grid;
+    width: 158px;
+    height: 158px;
+    background-color: none;
+    border: 1px solid black;
+    align-self: center;
+    justify-self: center;
+    justify-content: center;
+    align-content: center;
+    cursor: pointer;
+}
+.gameCell:first-child,
+.gameCell:nth-child(2),
+.gameCell:nth-child(3){
+ border-top: none;
+}
+.gameCell:first-child,
+.gameCell:nth-child(4),
+.gameCell:nth-child(7){
+ border-left: none;
+}
+.gameCell:nth-child(3),
+.gameCell:nth-child(6),
+.gameCell:nth-child(9){
+ border-right: none;
+}
+.gameCell:nth-child(7),
+.gameCell:nth-child(8),
+.gameCell:nth-child(9){
+ border-bottom: none;
+}
+
+.gameCell.x,
+.gameCell.o{
+    cursor: not-allowed;
+}
+
+.gameCell.x::before,
+.gameCell.x::after{
+    background-color: white;
+    border: 2px solid black;   
+}
+
+.gameCell.o::before{
+    background-color: white;
+    border: 2px solid black;
+}
+.gameCell.o::after{
+    background-color: bisque;
+    border: 2px solid black;
+}
+.gameBoard.x .gameCell:not(.x):not(.o):hover::before,
+.gameBoard.x .gameCell:not(.x):not(.o):hover::after{
+    background-color: black;
+}
+.gameBoard.o .gameCell:not(.o):not(.x):hover::before{
+    background-color: black;
+}
+.gameBoard.o .gameCell:not(.o):not(.x):hover::after{
+    background-color: bisque;
+    border: 2px solid black
+}
+/* X styling */
+.gameCell.x::before,
+.gameCell.x::after,
+.gameBoard.x .gameCell:not(.x):not(.o):hover::before,
+.gameBoard.x .gameCell:not(.x):not(.o):hover::after{
+    content: '';
+    width: 15px;
+    height: 100px;
+    align-self: center;
+    justify-self: center;
+    position: absolute;
+}
+.gameCell.x::before,
+.gameBoard.x .gameCell:not(.x):not(.o):hover::before{
+    transform: rotate(45deg);
+}
+.gameCell.x::after,
+.gameBoard.x .gameCell:not(.x):not(.o):hover::after{
+    transform: rotate(-45deg);
+}
+
+/* O styling */
+.gameCell.o::before,
+.gameCell.o::after,
+.gameBoard .gameCell:not(.x):not(.o):hover::before,
+.gameBoard .gameCell:not(.x):not(.o):hover::after{
+    content: '';
+    align-self: center;
+    justify-self: center;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.gameCell.o::before,
+.gameBoard .gameCell:not(.x):not(.o):hover::before{
+    width: 90px;
+    height: 90px;
+}
+.gameCell.o::after,
+.gameBoard.o .gameCell:not(.x):not(.o):hover::after{
+    width: 65px;
+    height: 65px;
+}
+
+/* Winning Styling */
+.winner{
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(0, 0, 0, .9);
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 70px;
+    flex-direction: column;
+}
+.winner.show{
+    display: flex;
+}
+.restart-game-button{
+    font-size: 30px;
+    background-color: white;
+    border: 5px solid black;
+}
+.restart-game-button:hover{
+    background-color: rgb(0, 0, 0, 0);
+    border: 2px solid white;
+    color: white;
+}
+

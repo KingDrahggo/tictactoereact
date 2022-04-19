@@ -1,5 +1,5 @@
 import "./GameBoard.css";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef} from "react";
 
 const GameBoard = () => {
   // Start game
@@ -16,13 +16,15 @@ const GameBoard = () => {
 
   const xClass = "x";
   const oClass = "o";
-  let oTurn;
-  let i = 9;
-  
-  function switchTurns() {
-    oTurn = !oTurn
-  }
-  
+  let oTurn = '';
+
+  // useEffect(() => {
+  //   switchTurns();
+  //   return () =>{ 
+  //   switchTurns();
+  //   console.log(oTurn);
+  // }
+  // },[dataGamecell1]);
 
   const [play1, addClass1] = useState(oTurn);
   const [play2, addClass2] = useState(oTurn);
@@ -33,7 +35,7 @@ const GameBoard = () => {
   const [play7, addClass7] = useState(oTurn);
   const [play8, addClass8] = useState(oTurn);
   const [play9, addClass9] = useState(oTurn);
-
+  
   const boardCell1 = document.querySelectorAll(".gb1");
   const boardCell2 = document.querySelectorAll(".gb2");
   const boardCell3 = document.querySelectorAll(".gb3");
@@ -54,111 +56,119 @@ const GameBoard = () => {
   const dataGamecell7 = useRef(boardCell7[0]);
   const dataGamecell8 = useRef(boardCell8[0]);
   const dataGamecell9 = useRef(boardCell9[0]);
+  console.log(dataGamecell1);
   console.log(dataGamecell2);
-
+  console.log(dataGamecell3);
   
+  function switchTurns() {
+   oTurn= !oTurn
+  }
 
-  const add1 = (e) => {
-    e.preventDefault();
-    console.log(e);
-    const cell = e.target.className;
-    let currentClass = oTurn ? oClass : xClass;
-    placeMark1(currentClass);
-    switchTurns();
-  };
-  const add2 = (e) => {
-    e.preventDefault();
-    console.log(e);
-    const cell = e.target.className;
-    let currentClass = oTurn ? oClass : xClass;
-    placeMark2(currentClass);
-    switchTurns();
-  };
+  // const add1 = (e) => {
+  //   console.log(e);
+  //   console.log(oTurn)
+  //   let cell = e.target.className + oTurn;
+  //   console.log(cell)
+  //   switchTurns();
+  //   addClass1(play1 === oTurn ? oClass : xClass);
+    
+  //   console.log(oTurn)
+  // };
+
+  // const add2 = (e) => {
+  //   console.log(e);
+  //   console.log(oTurn)
+  //   let cell = e.target.className + oTurn;
+  //   console.log(cell)
+  //   console.log(oTurn)
+  //   addClass2(play2 === oTurn ? oClass : xClass);
+   
+  //   console.log(oTurn)
+  // };
+  
   const add3 = (e) => {
-    e.preventDefault();
     console.log(e);
-    const cell = e.target.className;
-    let currentClass = oTurn ? oClass : xClass;
-    placeMark3(currentClass);
-    switchTurns();
+    let cell = e.target.className;
+    console.log(oTurn)
+    addClass3(play3 === oTurn ? oClass : xClass);
+    console.log(oTurn)
+    // switchTurns();
   };
   const add4 = (e) => {
-    e.preventDefault();
     console.log(e);
-    const cell = e.target.className;
+    let cell = e.target.className;
     let currentClass = oTurn ? oClass : xClass;
-    placeMark4(currentClass);
+    addClass4(cell + currentClass);
     switchTurns();
   };
   const add5 = (e) => {
-    e.preventDefault();
     console.log(e);
-    const cell = e.target.className;
+    let cell = e.target.className;
     let currentClass = oTurn ? oClass : xClass;
-    placeMark5(currentClass);
+    addClass5(cell + currentClass);
     switchTurns();
   };
   const add6 = (e) => {
-    e.preventDefault();
     console.log(e);
-    const cell = e.target.className;
+    let cell = e.target.className;
     let currentClass = oTurn ? oClass : xClass;
-    placeMark6(currentClass);
+    addClass6(cell + currentClass);
     switchTurns();
   };
   const add7 = (e) => {
-    e.preventDefault();
     console.log(e);
-    const cell = e.target.className;
+    let cell = e.target.className;
     let currentClass = oTurn ? oClass : xClass;
-    placeMark7(currentClass);
+    addClass7(cell + currentClass);
     switchTurns();
   };
   const add8 = (e) => {
-    e.preventDefault();
     console.log(e);
-    const cell = e.target.className;
+    let cell = e.target.className;
     let currentClass = oTurn ? oClass : xClass;
-    placeMark8(currentClass);
+    addClass8(cell + currentClass);
     switchTurns();
   };
   const add9 = (e) => {
-    e.preventDefault();
     console.log(e);
-    const cell = e.target.className;
+    let cell = e.target.className;
+    console.log(cell)
     let currentClass = oTurn ? oClass : xClass;
-    placeMark9(currentClass);
+    addClass9(cell + currentClass);
     switchTurns();
   };
+  
 
-  function placeMark1(currentClass) {
-    return addClass1(currentClass);
-  }
-  function placeMark2(currentClass) {
-    return addClass2(currentClass);
-  }
-  function placeMark3(currentClass) {
-    return addClass3(currentClass);
-  }
-  function placeMark4(currentClass) {
-    return addClass4(currentClass);
-  }
-  function placeMark5(currentClass) {
-    return addClass5(currentClass);
-  }
-  function placeMark6(currentClass) {
-    return addClass6(currentClass);
-  }
-  function placeMark7(currentClass) {
-    return addClass7(currentClass);
-  }
-  function placeMark8(currentClass) {
-    return addClass8(currentClass);
-  }
-  function placeMark9(currentClass) {
-    return addClass9(currentClass);
-  }
+  // function placeMark1(currentClass) {
+  //   return addClass1(currentClass);
+  // }
+  // function placeMark2(currentClass) {
+  //   return addClass2(currentClass);
+  // }
+  // function placeMark3(currentClass) {
+  //   return addClass3(currentClass);
+  // }
+  // function placeMark4(currentClass) {
+  //   return addClass4(currentClass);
+  // }
+  // function placeMark5(currentClass) {
+  //   return addClass5(currentClass);
+  // }
+  // function placeMark6(currentClass) {
+  //   return addClass6(currentClass);
+  // }
+  // function placeMark7(currentClass) {
+  //   return addClass7(currentClass);
+  // }
+  // function placeMark8(currentClass) {
+  //   return addClass8(currentClass);
+  // }
+  // function placeMark9(currentClass) {
+  //   return addClass9(currentClass);
+  // }
 
+
+ 
 
   // Play game
 
@@ -172,7 +182,10 @@ const GameBoard = () => {
         <div className="gb1">
           <div
             ref={dataGamecell1}
-            onClick={add1}
+            onClick={() =>{
+              switchTurns()
+              addClass1(play1 === oTurn? oClass : xClass)
+            }}
             className={`gameCell ${play1}`}
             data-gamecell
           ></div>
@@ -180,7 +193,10 @@ const GameBoard = () => {
         <div className="gb2">
           <div
             ref={dataGamecell2}
-            onClick={add2}
+            onClick={() =>{
+              switchTurns()
+              addClass2(play2 === oTurn? oClass : xClass)
+            }}
             className={`gameCell ${play2}`}
             data-gamecell
           ></div>
@@ -238,7 +254,6 @@ const GameBoard = () => {
             ref={dataGamecell9}
             onClick={add9}
             className={`gameCell ${play9}`}
-            data-gamecell
           ></div>
         </div>
       </div>

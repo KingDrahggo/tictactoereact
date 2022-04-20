@@ -11,7 +11,7 @@
     width: 30rem;
     height: 30rem;
     bottom: 65rem;
-    left: 32.5rem;
+    left: 45rem;
 }
 .gameCell{
     display: grid;
@@ -76,6 +76,7 @@
     background-color: bisque;
     border: 2px solid black
 }
+
 /* X styling */
 .gameCell.x::before,
 .gameCell.x::after,

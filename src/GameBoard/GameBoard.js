@@ -1,89 +1,105 @@
 import "./GameBoard.css";
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
 const GameBoard = () => {
-  // Start game
-  //  const gameCellElements = document.querySelectorAll('[data-gameCell]');
-  //  console.log(gameCellElements);
-
-  //  gameCellElements.forEach(gameCell=>{
-  //      gameCell.addEventListener('click', handleClick, {once: true})
-  //  })
-
-  //  function handleClick(e){
-  //      console.log('clicked')
-  //  }
-
+  // Varables for X & O
   const xClass = "x";
   const oClass = "o";
-  let changeTurns = xClass || oClass;
-  console.log(changeTurns)
 
+  // Usestate for clicking between true and false
+  const [isX, setIsX] = useState(true);
 
-  const [play, addClass] = useState(changeTurns);
-  // const [play2, addClass2] = useState(changeTurns);
-  // const [play3, addClass3] = useState(changeTurns);
-  // const [play4, addClass4] = useState(changeTurns);
-  // const [play5, addClass5] = useState(changeTurns);
-  // const [play6, addClass6] = useState(changeTurns);
-  // const [play7, addClass7] = useState(changeTurns);
-  // const [play8, addClass8] = useState(changeTurns);
-  // const [play9, addClass9] = useState(changeTurns);
-  // console.log(changeTurns + play1)
-  // console.log(changeTurns + play2)
+  // UseState for adding click value to div
+  const [play, addClass] = useState("");
+  const [play2, addClass2] = useState("");
+  const [play3, addClass3] = useState("");
+  const [play4, addClass4] = useState("");
+  const [play5, addClass5] = useState("");
+  const [play6, addClass6] = useState("");
+  const [play7, addClass7] = useState("");
+  const [play8, addClass8] = useState("");
+  const [play9, addClass9] = useState("");
 
-  let gb1 = useRef()
-  let gb2 = useRef()
-  console.log(gb1)
-  console.log(gb2)
+  // Click to toggle between X and O
+  const ToggleXO1 = (e) => {
+    e.preventDefault();
+    addClass(isX ? xClass : oClass);
+    console.log(play);
+    setIsX(!isX);
+  };
+  const ToggleXO2 = (e) => {
+    e.preventDefault();
+    addClass2(isX ? xClass : oClass);
+    console.log(play2);
+    setIsX(!isX);
+  };
+  const ToggleXO3 = (e) => {
+    e.preventDefault();
+    addClass3(isX ? xClass : oClass);
+    console.log(play3);
+    setIsX(!isX);
+  };
+  const ToggleXO4 = (e) => {
+    e.preventDefault();
+    addClass4(isX ? xClass : oClass);
+    console.log(play4);
+    setIsX(!isX);
+  };
+  const ToggleXO5 = (e) => {
+    e.preventDefault();
+    addClass5(isX ? xClass : oClass);
+    console.log(play5);
+    setIsX(!isX);
+  };
+  const ToggleXO6 = (e) => {
+    e.preventDefault();
+    addClass6(isX ? xClass : oClass);
+    console.log(play6);
+    setIsX(!isX);
+  };
+  const ToggleXO7 = (e) => {
+    e.preventDefault();
+    addClass7(isX ? xClass : oClass);
+    console.log(play7);
+    setIsX(!isX);
+  };
+  const ToggleXO8 = (e) => {
+    e.preventDefault();
+    addClass8(isX ? xClass : oClass);
+    console.log(play8);
+    setIsX(!isX);
+  };
+  const ToggleXO9 = (e) => {
+    e.preventDefault();
+    addClass9(isX ? xClass : oClass);
+    console.log(play9);
+    setIsX(!isX);
+  };
+
+  // Determine Winner
   
-  function switchTurns(e) {
-    e.nativeEvent.stopPropagation();
-    let onClick = e.type
-    let cell = e.target.className
-    if(onClick === "click"){
-      e.preventDefault();
-      console.log("clicked")
-      addClass(cell + play === changeTurns ? oClass : xClass)
-      onClick = true
-      console.log(onClick)
-    } 
-    if(onClick === true){
-      e.preventDefault();
-      console.log("clicked opposite")
-      addClass(cell + play === changeTurns ? xClass : oClass)
-      onClick = false
-      console.log(onClick)
-    }
-    console.log(onClick)
-    console.log(e)
-    console.log(changeTurns)
+  function winningNumbers(){
+    const winnerX = [
+        [0,1,2],
+        [3,4,5],
+        [6,7,8],
+        [0,3,6],
+        [1,4,7],
+        [2,5,8],
+        [0,4,8],
+        [2,4,6],
+      ]
+      const winnerO = [
+        [0,1,2],
+        [3,4,5],
+        [6,7,8],
+        [0,3,6],
+        [1,4,7],
+        [2,5,8],
+        [0,4,8],
+        [2,4,6],
+      ]
   }
-
-//  function switchToX (changeTurns){
-//   if (changeTurns) {
-//     changeTurns = " "
-//     console.log(changeTurns);
-//     changeTurns = changeTurns + xClass
-//     console.log (changeTurns)
-//     return changeTurns
-//    }
-//  }
-
-//  function switchToO(changeTurns){
-//   if (changeTurns) {
-//     changeTurns = " "
-//     console.log(changeTurns);
-//     changeTurns = changeTurns + oClass
-//     console.log (changeTurns)
-//     return changeTurns
-//    }
-//  }
-
- 
-
-
-  // Play game
 
   // Add Point to Player 1 or 2
 
@@ -92,59 +108,23 @@ const GameBoard = () => {
   return (
     <>
       <div className="gameBoard">
-        <div
-         ref={gb1}
-          onClick={switchTurns}
-          className={`gameCell ${play}`}
-        ></div>
+        <div onClick={ToggleXO1} className={`gameCell ${play}`}>1</div>
 
-        <div
-          ref={gb2}
-          onClick={switchTurns}
-          className={`gameCell ${play}`}
-        ></div>
+        <div onClick={ToggleXO2} className={`gameCell ${play2}`}></div>
 
-        <div
-         onClick={switchTurns}
-         className={`gameCell ${play}`}
-         data-gamecell
-        ></div>
+        <div onClick={ToggleXO3} className={`gameCell ${play3}`}></div>
 
-        <div
-         onClick={switchTurns}
-         className={`gameCell ${play}`}
-         data-gamecell
-        ></div>
+        <div onClick={ToggleXO4} className={`gameCell ${play4}`}></div>
 
-        <div
-          onClick={switchTurns}
-          className={`gameCell ${play}`}
-          data-gamecell
-        ></div>
+        <div onClick={ToggleXO5} className={`gameCell ${play5}`}></div>
 
-        <div
-          onClick={switchTurns}
-          className={`gameCell ${play}`}
-          data-gamecell
-        ></div>
+        <div onClick={ToggleXO6} className={`gameCell ${play6}`}></div>
 
-        <div
-          onClick={switchTurns}
-          className={`gameCell ${play}`}
-          data-gamecell
-        ></div>
+        <div onClick={ToggleXO7} className={`gameCell ${play7}`}></div>
 
-        <div
-          onClick={switchTurns}
-          className={`gameCell ${play}`}
-          data-gamecell
-        ></div>
+        <div onClick={ToggleXO8} className={`gameCell ${play8}`}></div>
 
-        <div
-          onClick={switchTurns}
-          className={`gameCell ${play}`}
-          data-gamecell
-        ></div>
+        <div onClick={ToggleXO9} className={`gameCell ${play9}`}></div>
       </div>
       <div className="winner">
         <div className="winner-text">You Win!</div>

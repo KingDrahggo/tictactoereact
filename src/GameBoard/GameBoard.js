@@ -10,7 +10,8 @@ const GameBoard = () => {
   const [isX, setIsX] = useState(true);
 
   // UseState for adding click value to div
-  const [play, addClass] = useState("");
+  const [play0, addClass0] = useState("");
+  const [play1, addClass1] = useState("");
   const [play2, addClass2] = useState("");
   const [play3, addClass3] = useState("");
   const [play4, addClass4] = useState("");
@@ -18,13 +19,18 @@ const GameBoard = () => {
   const [play6, addClass6] = useState("");
   const [play7, addClass7] = useState("");
   const [play8, addClass8] = useState("");
-  const [play9, addClass9] = useState("");
 
   // Click to toggle between X and O
+  const ToggleXO0 = (e) => {
+    e.preventDefault();
+    addClass0(isX ? xClass : oClass);
+    console.log(play0);
+    setIsX(!isX);
+  };
   const ToggleXO1 = (e) => {
     e.preventDefault();
-    addClass(isX ? xClass : oClass);
-    console.log(play);
+    addClass1(isX ? xClass : oClass);
+    console.log(play1);
     setIsX(!isX);
   };
   const ToggleXO2 = (e) => {
@@ -69,12 +75,6 @@ const GameBoard = () => {
     console.log(play8);
     setIsX(!isX);
   };
-  const ToggleXO9 = (e) => {
-    e.preventDefault();
-    addClass9(isX ? xClass : oClass);
-    console.log(play9);
-    setIsX(!isX);
-  };
 
   // Determine Winner
   
@@ -108,7 +108,9 @@ const GameBoard = () => {
   return (
     <>
       <div className="gameBoard">
-        <div onClick={ToggleXO1} className={`gameCell ${play}`}>1</div>
+        <div onClick={ToggleXO0} className={`gameCell ${play0}`}>1</div>
+
+        <div onClick={ToggleXO1} className={`gameCell ${play1}`}></div>
 
         <div onClick={ToggleXO2} className={`gameCell ${play2}`}></div>
 
@@ -123,8 +125,6 @@ const GameBoard = () => {
         <div onClick={ToggleXO7} className={`gameCell ${play7}`}></div>
 
         <div onClick={ToggleXO8} className={`gameCell ${play8}`}></div>
-
-        <div onClick={ToggleXO9} className={`gameCell ${play9}`}></div>
       </div>
       <div className="winner">
         <div className="winner-text">You Win!</div>

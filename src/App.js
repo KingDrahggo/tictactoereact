@@ -7,7 +7,7 @@ import GameBoard from './GameBoard/GameBoard';
 function App() {
   
   return (
-    <div className='app'>
+    <div className='app-container'>
     <Header />
     <Player1 />
     <Player2 />

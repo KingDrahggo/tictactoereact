@@ -51,6 +51,7 @@ const GameBoard = () => {
         ))}
       </div>
 
+      
       {winner && (
         <div className="winner show">
           <div className="winner-text">{`Player ${winner.toUpperCase()} Wins!`}</div>

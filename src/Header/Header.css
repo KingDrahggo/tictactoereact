@@ -1,44 +1,59 @@
-/* Header styling */
-.header{
-    display: flex;
-    justify-content: center;
-    position: relative;
-    font-size: 70px;
-    bottom: 112px;
-    right: 20px;
-    background-color: black;
-    opacity: .9;
-    width: calc(100% + 30px);
-    height: 251px;
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-top: 2rem;
 }
 
-.tic{
-    background-color: crimson;
-    color: #000;
-}
-.tic:hover{
-    background-color: black;
-    color: crimson;
-    transition: all ease-out 0.4s;
-}
-
-.tac{
-    background-color: coral;
-    border-radius: 100px;
-    color: white;
-}
-.tac:hover{
-    background-color: white;
-    color: coral;
-    transition: all ease-out 0.4s;
+.title {
+    font-size: 4rem;
+    margin: 0;
+    line-height: 1;
+    letter-spacing: 5px;
+    font-weight: 900;
+    text-transform: uppercase;
 }
 
-.toe{
-    color: crimson;
-}
-.toe:hover{
-    background-color: crimson;
-    color: #000;
-    transition: all ease-out 0.4s;
+.tic {
+    color: #0ff;
+    text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+    margin-right: 15px;
 }
 
+.tac {
+    color: #fff;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+    margin-right: 15px;
+}
+
+.toe {
+    color: #f0f;
+    text-shadow: 0 0 10px #f0f, 0 0 20px #f0f;
+}
+
+.subtitle {
+    margin-top: 10px;
+    color: #aaa;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    animation: flicker 4s infinite;
+}
+
+@keyframes flicker {
+
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+        opacity: 1;
+    }
+
+    20%,
+    24%,
+    55% {
+        opacity: 0.1;
+    }
+}

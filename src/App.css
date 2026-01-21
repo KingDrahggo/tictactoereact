@@ -1,0 +1,102 @@
+.app-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.game-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.board-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.status-display {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.status-text {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.status-text.draw {
+    color: #ff9;
+    text-shadow: 0 0 10px #ff9;
+}
+
+.status-text.win.x {
+    color: #0ff;
+    text-shadow: 0 0 10px #0ff;
+}
+
+.status-text.win.o {
+    color: #f0f;
+    text-shadow: 0 0 10px #f0f;
+}
+
+.status-text.turn {
+    color: #fff;
+    opacity: 0.8;
+}
+
+.reset-button {
+    margin-top: 30px;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.reset-button:hover {
+    background: #fff;
+    color: #1a1a2e;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.reset-button:active {
+    transform: translateY(1px);
+}
+
+@media (max-width: 900px) {
+    .game-area {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .player-section {
+        order: 2;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .board-section {
+        order: 1;
+    }
+}
